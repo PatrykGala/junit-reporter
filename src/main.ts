@@ -18,7 +18,7 @@ export async function run(): Promise<void> {
     await event.send(report, checkRun);
 
   } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed((error as Error).message);
   }
 }
 
